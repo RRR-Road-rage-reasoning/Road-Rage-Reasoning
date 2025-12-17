@@ -27,7 +27,7 @@ We adopt a **two-stage pipeline**:
 
 The task is formulated as **binary classification** for three hazardous behavior categories:
 
-* Category 1 (Dangerous Behavior): normal vs. dangerous
+* Category 1 (Dangerous Behavior): normal vs. Dangerous
 * Category 2 (Aggressive Behavior): normal vs. Aggressive
 * Category 3 (Obstructive Behavior): normal vs. Obstructive
 

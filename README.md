@@ -63,7 +63,7 @@ https://huggingface.co/OpenGVLab/InternVL/blob/main/internvl_c_13b_224px.pth
 Each video should be converted into a folder of RGB frames:
 
 ```text
-dataset/
+video2img_2fps/
  ├── 0_110/
  │    ├── 0001.jpg
  │    ├── 0002.jpg
@@ -72,29 +72,6 @@ dataset/
 ```
 
 During preprocessing, frames are **uniformly sampled to a fixed number (e.g., 20 frames)** per video.
-
----
-
-## 🚀 Quick Start
-
-We provide a **pre-extracted VLM feature file**, allowing you to **skip the VLM feature extraction stage** and directly run the evaluation pipeline.
-
-### One-Click Execution
-
-Simply run:
-
-```bash
-python main.py
-```
-
-### Test Results
-
-| Category    | Accuracy | F1-score |
-| ----------- | -------- | -------- |
-| Dangerous   | 100.00%  | 1.0000   |
-| Aggressive  | 82.35%   | 0.6667   |
-| Obstructive | 88.24%   | 0.8333   |
-| Normal      | 100.00%  | 1.0000   |
 
 ---
 
@@ -116,15 +93,34 @@ The extracted features are stored as `.pt` files and reused for classifier train
 
 ### 2️⃣ Classification
 
-Train the lightweight temporal classification head on frozen VLM features:
+Train the lightweight temporal classification head on the extracted VLM features to perform binary detection of three road-rage hazardous behavior categories.
 
 ```bash
 python scripts/classifier.py
 ```
 
-Only the lightweight classifier parameters are updated during training.
+Test Results(Example)
 
+| Category    | Accuracy | F1-score |
+| ----------- | -------- | -------- |
+| Dangerous   | 100.00%  | 1.0000   |
+| Aggressive  | 82.35%   | 0.6667   |
+| Obstructive | 88.24%   | 0.8333   |
+| Normal      | 100.00%  | 1.0000   |
+
+#### 🚀 Quick Start
+
+Due to the large size of VLM-extracted features, they are not included in this repository.
+If you would like to skip the VLM feature extraction stage and directly run the classification and evaluation pipeline, feel free to contact us to obtain the extracted VLM features.
+
+Once the features are prepared,Simply run:
+
+```bash
+python main.py
+```
 ---
+
+This will directly load the provided features and output the classification results for the three hazardous behavior categories.
 
 ### 3️⃣ Inference
 
@@ -135,6 +131,8 @@ python scripts/run_inference.py --video_dir path/to/video_frames
 ```
 
 The output includes predicted probabilities and binary labels for each hazardous behavior category.
+
+**Note**: We provide pretrained weights for the lightweight MLP classifier, so inference can be performed directly without retraining. The VLM is used only as a fixed feature extractor during inference.
 
 ---
 

@@ -119,7 +119,7 @@ The extracted features are stored as `.pt` files and reused for classifier train
 Train the lightweight temporal classification head on frozen VLM features:
 
 ```bash
-python scripts/Classifier.py
+python scripts/classifier.py
 ```
 
 Only the lightweight classifier parameters are updated during training.
@@ -131,7 +131,7 @@ Only the lightweight classifier parameters are updated during training.
 Run inference on a single video:
 
 ```bash
-python scripts/predict.py --video_dir path/to/video_frames
+python scripts/run_inference.py --video_dir path/to/video_frames
 ```
 
 The output includes predicted probabilities and binary labels for each hazardous behavior category.

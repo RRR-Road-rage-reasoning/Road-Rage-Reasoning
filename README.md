@@ -65,8 +65,8 @@ Each video should be converted into a folder of RGB frames:
 ```text
 video2img_2fps/
  ├── 0_110/
- │    ├── 0001.jpg
- │    ├── 0002.jpg
+ │    ├── 0001.png
+ │    ├── 0002.png
  │    └── ...
  └── 2_110/
 ```

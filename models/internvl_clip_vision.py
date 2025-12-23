@@ -12,7 +12,7 @@ from .flash_attention_class import FlashAttention
 from flash_attn.modules.mlp import FusedMLP
 from flash_attn.ops.rms_norm import DropoutAddRMSNorm
 
-MODEL_PATH = '/root/zj/VLM/single_modality/checkpoint/internvl'
+MODEL_PATH = 'your_model_path/internvl'
 _MODELS = {
     # see InternVL
     "internvl_c_13b_224px": os.path.join(MODEL_PATH, "internvl_c_13b_224px.pth"),
@@ -603,4 +603,5 @@ if __name__ == '__main__':
     model = internvl_clip_6b(img_size).cuda().half()
     # flops = FlopCountAnalysis(model, video)
     model(video)
+
 

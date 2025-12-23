@@ -103,9 +103,9 @@ Test Results(Example)
 
 | Category    | Accuracy | F1-score |
 | ----------- | -------- | -------- |
-| Dangerous   | 100.00%  | 1.0000   |
-| Aggressive  | 82.35%   | 0.6667   |
-| Obstructive | 88.24%   | 0.8333   |
+| Dangerous   | 94.12%   | 0.9697   |
+| Aggressive  | 88.24%   | 0.8000   |
+| Obstructive | 82.35%   | 0.7692   |
 | Normal      | 100.00%  | 1.0000   |
 
 #### 🚀 Quick Start

@@ -25,13 +25,16 @@ We adopt a **two-stage pipeline**:
 
 ## 🎯 Task Definition
 
-The task is formulated as **binary classification** for three hazardous behavior categories:
+The task is formulated as **independent binary classification** for three hazardous driving behavior categories.  
+Each category is annotated using **0/1 binary labels**, where `1` indicates the presence of a hazardous behavior.
 
-* Category 1 (Dangerous Behavior): normal vs. Dangerous
-* Category 2 (Aggressive Behavior): normal vs. Aggressive
-* Category 3 (Obstructive Behavior): normal vs. Obstructive
+| Category ID | Hazardous Behavior  | Label = 0 (Normal) | Label = 1 (Hazardous) |
+|------------ |---------------------|--------------------|-----------------------|
+| 1           | Dangerous Behavior  | Normal driving     | Dangerous driving     |
+| 2           | Aggressive Behavior | Normal driving     | Aggressive driving    |
+| 3           | Obstructive Behavior| Normal driving     | Obstructive driving   |
 
-Each category is detected independently using the same feature extraction pipeline.
+Each hazardous behavior category is detected **independently**, while sharing the same visual feature extraction pipeline.
 
 ---
 

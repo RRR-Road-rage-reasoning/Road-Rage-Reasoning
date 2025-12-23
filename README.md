@@ -136,11 +136,18 @@ The output includes predicted probabilities and binary labels for each hazardous
 
 ---
 
+## 📬 Data & Resource Availability
+
+For dataset access or additional experimental resources, please contact **roadragereasoning@163.com**.
+
+---
+
 ## 📜 License
 
 This project is released under the **MIT License**.
 
 ---
+
 
 
 
